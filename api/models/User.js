@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.schema(
   {
-    userName: {
+    username: {
       type: String,
       required: true,
       min: 3,
@@ -33,7 +33,7 @@ const UserSchema = new mongoose.schema(
       default: [],
     },
     followings: {
-      typr: Array,
+      type: Array,
       default: [],
     },
     isAdmin: {
