@@ -9,7 +9,22 @@ function Login() {
           </span>
         </div>
         <div className="loginRight">
-          <form className="loginBox"></form>
+          <form className="loginBox">
+            <input
+              placeholder="Email"
+              type="email"
+              required
+              className="loginInput"
+            />
+            <input
+              placeholder="Password"
+              type="password"
+              required
+              minLength="6"
+              className="loginInput"
+            />
+            <button type="submit" className="loginButton"></button>
+          </form>
         </div>
       </div>
     </div>
