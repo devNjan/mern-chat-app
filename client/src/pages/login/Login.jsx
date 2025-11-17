@@ -1,4 +1,10 @@
+import { useRef } from "react";
+import { CircularProgress } from "@material-ui/core";
+
 function Login() {
+  const email = useRef();
+  const password = useRef();
+
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -15,6 +21,7 @@ function Login() {
               type="email"
               required
               className="loginInput"
+              ref={email}
             />
             <input
               placeholder="Password"
@@ -22,8 +29,19 @@ function Login() {
               required
               minLength="6"
               className="loginInput"
+              ref={password}
             />
-            <button type="submit" className="loginButton"></button>
+            <button type="submit" className="loginButton">
+              {isFetching ? <CircularProgress /> : "Log In"}
+            </button>
+            <span className="loginForgot">Forgot Password?</span>
+            <button className="loginRegisterButton">
+              {isFetching ? (
+                <CircularProgress color="white" size="20px" />
+              ) : (
+                "Create New Account"
+              )}
+            </button>
           </form>
         </div>
       </div>
