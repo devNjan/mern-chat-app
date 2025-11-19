@@ -5,6 +5,10 @@ function Login() {
   const email = useRef();
   const password = useRef();
 
+  const handleClick = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="login">
       <div className="loginWrapper">
