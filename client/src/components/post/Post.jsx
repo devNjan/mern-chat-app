@@ -17,6 +17,22 @@ function Post({ post }) {
     setIsLiked(post.likes.includes(currentUSer._id));
   }, [currentUSer._id, post.likes]);
 
+  useEffect(() => {
+    const fetchUser = async () => {
+      const res = await axios.get(`/users?userId=${post.usereId}`);
+      setUser(res.data);
+    };
+    fetchUser();
+  }, [post.userId]);
+
+  const likeHandler = () => {
+    try {
+      axios.put("/posts/" + post._id / "like", { userId: currentUSer._id });
+    } catch (err) {}
+    setLike(isLiked ? like + 1 : like - 1);
+    setIsLiked(!isLiked);
+  };
+
   return <div></div>;
 }
 
