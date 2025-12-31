@@ -33,7 +33,29 @@ function Post({ post }) {
     setIsLiked(!isLiked);
   };
 
-  return <div></div>;
+  return (
+    <div className="post">
+      <div className="postWrapper">
+        <div className="postTop">
+          <div className="postTopLeft">
+            <Link to={`/profile/${user.username}`}>
+              <img
+                className="postProfileImg"
+                src={
+                  user.profilePicture
+                    ? PF + user.profilePicture
+                    : PF + "person/noAvatar.png"
+                }
+                alt=""
+              />
+            </Link>
+            <span className="postText">{user.userName}</span>
+            <span className="postDate">{format(post.createdAt)}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Post;
