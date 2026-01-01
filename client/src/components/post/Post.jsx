@@ -52,6 +52,35 @@ function Post({ post }) {
             <span className="postText">{user.userName}</span>
             <span className="postDate">{format(post.createdAt)}</span>
           </div>
+          <div className="postTopRight">
+            <MoreVert />
+          </div>
+        </div>
+        <div className="PostCenter">
+          <span className="PostText">{post?.desc}</span>
+          <img className="postImg" src={PF + post.img} alt="" />
+        </div>
+        <div className="postBottom">
+          <div className="postBottomLeft">
+            <img
+              className="likeIcon"
+              src={`${PF}like.png`}
+              onClick={likeHandler}
+              alt=""
+            />
+            <img
+              className="likeIcon"
+              src={`${PF}heart.png`}
+              onClick={likeHandler}
+              alt=""
+            />
+            <span className="postLikeCounter">{like} people like it</span>
+          </div>
+          <div className="postBottomRight">
+            <span className="postCommentText">
+              {post.comment} comments on this post
+            </span>
+          </div>
         </div>
       </div>
     </div>
