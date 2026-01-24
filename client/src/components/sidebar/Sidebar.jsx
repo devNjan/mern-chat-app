@@ -1,3 +1,4 @@
+import "./sidebar.css";
 import {
   RssFeed,
   Chat,
